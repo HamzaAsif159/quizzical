@@ -13,8 +13,8 @@ export default function Mcqs(){
                 </ul>
            </div>
 
-            <img src="./public/illustration.png" alt=""  className="absolute bottom-0"/>
-            <img src="./public/illustration-2.png" alt="" className="absolute top-0 right-0"/>
+            <img src="./illustration.png" alt=""  className="absolute bottom-0"/>
+            <img src="./illustration-2.png" alt="" className="absolute top-0 right-0"/>
         </div>
     )
 }

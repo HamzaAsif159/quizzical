@@ -9,8 +9,8 @@ export default function MainScreen(props){
                 <p className="text-primary font-inter text-xl w-96 text-center">Do you love challenges? play this quiz game and have fun at the same time!!</p>
                 <button className="text-white bg-btn py-4 px-12 rounded hover:bg-blue-600" onClick={props.handleClick}>Start quiz</button>
              </div>
-             <img src="./public/illustration.png" alt=""  className="absolute bottom-0"/>
-             <img src="./public/illustration-2.png" alt="" className="absolute top-0 right-0"/>
+             <img src="./illustration.png" alt=""  className="absolute bottom-0"/>
+             <img src="./illustration-2.png" alt="" className="absolute top-0 right-0"/>
         </main>
        
     )
