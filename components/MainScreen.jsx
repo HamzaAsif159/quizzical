@@ -12,6 +12,5 @@ export default function MainScreen(props){
              <img src="./illustration.png" alt=""  className="absolute bottom-0"/>
              <img src="./illustration-2.png" alt="" className="absolute top-0 right-0"/>
         </main>
-       
     )
 }
