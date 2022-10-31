@@ -18,6 +18,7 @@ export default function MainScreen(props){
                 onClick={props.handleClick}>Start quiz</button>
 
              </div>
+             
              <img src="./illustration.png" alt="illustration"  className="absolute bottom-0"/>
              <img src="./illustration-2.png" alt="illustration-2" className="absolute top-0 right-0"/>
         </main>
