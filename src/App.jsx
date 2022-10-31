@@ -24,20 +24,63 @@ export default function App() {
             {id: index+1, choice: e, isCorrect: false, isSelected: false})),
             {id: 4, choice: e.correct_answer, isCorrect: true, isSelected: false}])})))
       })
-      console.log(questions)
   },[newGame])
 
-  let renderQuestions = questions.map((e,index) => (<Question key ={index} item ={e} /> ))
+  console.log(questions)
+
+  function selectChoice(qs,qsId){
+    if(!isEnded) {
+      setQuestions(prev => prev.map(e => {
+        return e.id===qs? {...e,answer:e.answer.map(ele => (ele.id===qsId? {...ele, isSelected: !ele.isSelected} : {...ele, isSelected:false})) } : e}))
+    }
+  }
+
+  let renderQuestions = questions.map((e,index) => (
+    <Question 
+     key ={index}
+     item ={e} 
+     handleClick = {selectChoice}
+     end = {isEnded}
+     /> 
+     ))
+    
+
+  function endGame() {
+    setIsEnded(true)
+    questions.forEach(qs => qs.answer.forEach(choice => {
+      if (choice.isCorrect && choice.isSelected) {
+        setResultData(prev => prev+1)
+      }
+    }))
+  }
+
 
   function startGame(){
     setIsStarted(!isStarted)
+    setResultData(0)
   }
 
+  function newGameFunc(){
+    setResultData(0)
+    setNewGame(!newGame)
+    setIsEnded(!isEnded)
+ 
+  }
   
 
   return (
      isStarted ?
-     renderQuestions:
+     <main>
+      {renderQuestions}
+      <div className='flex items-center justify-center p-4'>
+      {isEnded && <p className= "text-primary mr-3" >You scored {resultData}/5 correct answers! </p>}
+      <button className="text-white bg-btn py-4 px-12 rounded hover:bg-blue-600 text-center"  
+      onClick={isEnded? newGameFunc : endGame }>{isEnded? 'Play Again' : 'Check answers'}</button>
+      </div>
+     
+     </main>
+     
+     :
      <MainScreen
       handleClick = {startGame}
     />
