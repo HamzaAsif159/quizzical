@@ -4,7 +4,7 @@ export default function MainScreen(props){
 
     return (
         <main>
-             <div className=" bg-main h-screen flex flex-col items-center justify-center gap-6">
+             <div className=" bg-main h-screen flex flex-col items-center justify-center gap-6 ">
 
                 <h1 className="text-primary text-center text-4xl sm:text-5xl md:text-6xl font-karla font-bold ">
                 Quizzical</h1>

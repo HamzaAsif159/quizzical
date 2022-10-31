@@ -18,14 +18,12 @@ export default function Question(props){
     let questions = props.item.qs;
 
     return (
-           <div className="flex flex-col my-0 sm:mx-auto sm:w-3/6 p-4">
-                <div>
-                    <h1 className="text-xl text-primary font-karla font-bold max-w-xl">{questions}</h1>
-                    <ul className="flex gap-3 my-1">
+           <div className="sm:flex sm:flex-col my-0 sm:mx-auto sm:w-3/6 p-2 sm:p-4 ">
+                    <p className="sm:text-xl text-primary font-karla font-bold">{questions}</p>
+                    <ul className="flex flex-wrap gap-3 my-1 ">
                     {choices}
                     </ul>
-                    <hr className="border-2 border-border my-3" />
-                </div>
+                    <hr className="border-2 border-border my-3 w-full" />
             </div>
     )
 }
